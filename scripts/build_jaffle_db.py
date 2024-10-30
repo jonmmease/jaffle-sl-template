@@ -1,6 +1,7 @@
 import duckdb
 import os
 from pathlib import Path
+from dbt.cli.main import dbtRunner, dbtRunnerResult
 
 # Set up paths
 root = Path(__file__).parent.parent
@@ -8,6 +9,11 @@ data_dir = root / "jaffle-data"
 db_file = data_dir / 'jaffle.db'
 
 if __name__ == "__main__":
+
+    # Delete the database file if it exists
+    if os.path.exists(str(db_file)):
+        os.remove(str(db_file))
+
     # Connect to DuckDB
     conn = duckdb.connect(str(db_file))
 
@@ -26,10 +32,16 @@ if __name__ == "__main__":
         """)
         print(f"Imported {csv_file} into table dbt_sl_test.{table_name}")
 
-    # Close the connection
-    conn.close()
-
     print(f"All CSV files have been imported into {db_file} under the 'dbt_sl_test' schema")
 
-# To make the SELECT statement valid, you would use:
-# conn.execute('SELECT * FROM "jaffle"."dbt_sl_test"."raw_stores"')
+    # Run dbt to materialize the leaf models
+    dbt = dbtRunner()
+    result = dbt.invoke(["run", "--select", "+orders +customers +order_items"])
+    
+    if result.success:
+        print("Successfully materialized orders, customers, and order_items models")
+    else:
+        print("Failed to materialize orders, customers, and order_items models")
+
+    # Close the connection
+    conn.close()
