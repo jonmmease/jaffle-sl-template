@@ -22,3 +22,6 @@ core-env-2
 # pixi environments
 .pixi
 *.egg-info
+
+# data
+jaffle-data/jaffle.db
