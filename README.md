@@ -65,3 +65,9 @@ dbt build
 mf validate-configs
 mf query --metrics large_order
 ```
+
+## Build docs
+
+```shell
+dbt docs generate
+```

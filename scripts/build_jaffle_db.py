@@ -1,7 +1,7 @@
 import duckdb
 import os
 from pathlib import Path
-from dbt.cli.main import dbtRunner, dbtRunnerResult
+from dbt.cli.main import dbtRunner
 
 # Set up paths
 root = Path(__file__).parent.parent
