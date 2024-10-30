@@ -44,6 +44,13 @@ profile:
 
 update the path to the duckdb file to where you want to store it.
 
+## Generate duckdb database
+Generate the duckdb database from the CSV files in the `jaffle-data` directory.
+
+```shell
+pixi run build-jaffle-db
+```
+
 ## Test the connection
 1. Update the `profile` within `dbt_project.yml` to refer to one of your pre-existing profile
 
