@@ -5,7 +5,7 @@ with
 days as (
     
     --for BQ adapters use "DATE('01/01/2000','mm/dd/yyyy')"
-    {{ dbt_date.get_base_dates(n_dateparts=365*10, datepart="day") }}
+    {{ dbt_date.get_base_dates(start_date="2016-01-01", end_date="2017-09-01", datepart="day") }}
 
 ),
 

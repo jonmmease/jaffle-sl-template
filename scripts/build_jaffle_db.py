@@ -40,7 +40,7 @@ if __name__ == "__main__":
     result = dbt.invoke([
         "run",
         "--select",
-        "+orders +customers +order_items +locations +products +stg_customers +stg_locations +stg_order_items +stg_orders +stg_products +stg_supplies",
+        "+orders +customers +order_items +locations +products +stg_customers +stg_locations +stg_order_items +stg_orders +stg_products +stg_supplies +metricflow_time_spine",
     ])
 
     if result.success:
