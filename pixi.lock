@@ -27,12 +27,13 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/7e/d4/7ebdbd03970677812aac39c869717059dbb71a4cfc033ca6e5221787892c/click-8.1.8-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/0e/fc/82796c10545f3df9882566c79debac28b664e3a3a08fdb493ac3cc418709/daff-1.3.46.tar.gz
-      - pypi: git+https://github.com/dbt-labs/dbt-core@ff6745c79532d50139d553f3b088c5d783b4f2dd#subdirectory=core
       - pypi: https://files.pythonhosted.org/packages/6d/0e/9fcd0fbd6de0827bf8834007bce3773a8d3d21348e2b3470df9dcb41a55e/dbt_adapters-1.13.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fc/03/25d3618dc3af65996e3fde27859ad8a7fdf94889a327430a99f33d811db0/dbt_common-1.14.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/5a/c6/157d0ff82f32641a6918a39ea99cce24e8fa5c05b98753d42d18070a36e6/dbt_core-1.9.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4b/72/fe647c056c3745c705204a8f1e2c21c21ebb1863aa1b6c95f80e76db4ad6/dbt_duckdb-1.9.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/77/1f/ca6d66d67464df1ea8e814d09b1100d15672ae4ce7f0dff41f67956e5f7f/dbt_extractor-0.5.1-cp38-abi3-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl
-      - pypi: https://files.pythonhosted.org/packages/a9/65/7318bfa6eee16a9ccd53ba551e5c81d112ddb19930d7e42f90053aad0143/dbt_semantic_interfaces-0.8.3-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/ba/36/8e1cc4e65184a33483c8f835999271a762921ebdbd67296f5cfc330dc5f6/dbt_metricflow-0.8.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/a3/4d/9e0eec04821154c51c05dab77bc3eed95337c42f471d6ffe7b4a699e8cb1/dbt_semantic_interfaces-0.7.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/18/e6/d27d37dc55dbf40cdbd665aa52844b065ac760c9a02a02265f97ea7a4256/deepdiff-7.0.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/de/7e/aef0fa22a80939edb04f66152a1fd5ce7257931576be192a8068e74f0892/duckdb-1.1.3-cp310-cp310-macosx_12_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/00/be/d59db2d1d52697c6adc9eacaf50e8965b6345cc143f671e1ed068818d5cf/graphviz-0.20.3-py3-none-any.whl
@@ -47,8 +48,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/28/5d/d710c38be68b0fb54e645048fe359c3904cc3cb64b2de9d40e1712bf110c/log_symbols-0.0.14-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/04/e1/6e2194baeae0bca1fae6629dc0cbbb968d4d941469cbab11a3872edff374/MarkupSafe-3.0.2-cp310-cp310-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/1b/35/8d63733a2c12149d0c7663c29bf626bdbeea5f0ff963afe58a42b4810981/mashumaro-3.14-py3-none-any.whl
-      - pypi: git+https://github.com/jonmmease/metricflow.git@3c2b3f44043a2deadfcb145d0d0e47bc4db2e069
-      - pypi: git+https://github.com/jonmmease/metricflow.git@3c2b3f44043a2deadfcb145d0d0e47bc4db2e069#subdirectory=dbt-metricflow
+      - pypi: https://files.pythonhosted.org/packages/d6/87/d3db77fa9051160e4ea26bdd1da26601ee71058ede5543408bceba317ba0/metricflow-0.207.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5a/cb/6dce742ea14e47d6f565589e859ad225f2a5de576d7696e0623b784e226b/more_itertools-10.1.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/08/52/bf4fbf72f897a23a56b822997a72c16de07d8d56d7bf273242f884055682/msgpack-1.1.0-cp310-cp310-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/b9/54/dd730b32ea14ea797530a4479b2ed46a6fb250f682a9cfb997e968bf0261/networkx-3.4.2-py3-none-any.whl
@@ -272,8 +272,9 @@ packages:
   requires_python: '>=3.9'
 - kind: pypi
   name: dbt-core
-  version: 1.10.0a1
-  url: git+https://github.com/dbt-labs/dbt-core@ff6745c79532d50139d553f3b088c5d783b4f2dd#subdirectory=core
+  version: 1.9.2
+  url: https://files.pythonhosted.org/packages/5a/c6/157d0ff82f32641a6918a39ea99cce24e8fa5c05b98753d42d18070a36e6/dbt_core-1.9.2-py3-none-any.whl
+  sha256: 9da00a336910c3279e4deb34febef9ebd7eed847cf8a20452df0439518eb8188
   requires_dist:
   - agate<1.10,>=1.7.0
   - jinja2<4,>=3.1.3
@@ -286,7 +287,7 @@ packages:
   - pathspec<0.13,>=0.9
   - sqlparse<0.6.0,>=0.5.0
   - dbt-extractor<=0.6,>=0.5.0
-  - dbt-semantic-interfaces<0.9,>=0.8.3
+  - dbt-semantic-interfaces<0.8,>=0.7.4
   - dbt-common<2.0,>=1.13.0
   - dbt-adapters<2.0,>=1.10.1
   - packaging>20.9
@@ -317,28 +318,30 @@ packages:
   requires_python: '>=3.6.1'
 - kind: pypi
   name: dbt-metricflow
-  version: 0.7.0
-  url: git+https://github.com/jonmmease/metricflow.git@3c2b3f44043a2deadfcb145d0d0e47bc4db2e069#subdirectory=dbt-metricflow
+  version: 0.8.1
+  url: https://files.pythonhosted.org/packages/ba/36/8e1cc4e65184a33483c8f835999271a762921ebdbd67296f5cfc330dc5f6/dbt_metricflow-0.8.1-py3-none-any.whl
+  sha256: 65cb58bf5baeb04789e299a223ab594c5cd31550b9eba34e8dbc2e6bdb1376e6
   requires_dist:
   - click>=8.1.6
-  - dbt-core @ git+https://github.com/dbt-labs/dbt-core@ff6745c79532d50139d553f3b088c5d783b4f2dd#subdirectory=core
+  - dbt-core<1.10.0,>=1.9.0
   - dbt-semantic-interfaces
   - halo<0.1.0,>=0.0.31
   - jinja2>=3.1.3
+  - metricflow<0.208.0,>=0.207.2
   - update-checker<0.19.0,>=0.18.0
-  - dbt-bigquery<1.9.0,>=1.8.0 ; extra == 'dbt-bigquery'
-  - dbt-databricks<1.9.0,>=1.8.0 ; extra == 'dbt-databricks'
-  - dbt-duckdb<1.9.0,>=1.8.0 ; extra == 'dbt-duckdb'
-  - dbt-postgres<1.9.0,>=1.8.0 ; extra == 'dbt-postgres'
-  - dbt-redshift<1.9.0,>=1.8.0 ; extra == 'dbt-redshift'
-  - dbt-snowflake<1.9.0,>=1.8.0 ; extra == 'dbt-snowflake'
-  - dbt-trino<1.9.0,>=1.8.0 ; extra == 'dbt-trino'
-  requires_python: <3.13,>=3.8
+  - dbt-bigquery<1.10.0,>=1.9.0 ; extra == 'dbt-bigquery'
+  - dbt-databricks<1.10.0,>=1.9.0 ; extra == 'dbt-databricks'
+  - dbt-duckdb<1.10.0,>=1.9.0 ; extra == 'dbt-duckdb'
+  - dbt-postgres<1.10.0,>=1.9.0 ; extra == 'dbt-postgres'
+  - dbt-redshift<1.10.0,>=1.9.0 ; extra == 'dbt-redshift'
+  - dbt-snowflake<1.10.0,>=1.9.0 ; extra == 'dbt-snowflake'
+  - dbt-trino<1.10.0,>=1.9.0 ; extra == 'dbt-trino'
+  requires_python: <3.13,>=3.9
 - kind: pypi
   name: dbt-semantic-interfaces
-  version: 0.8.3
-  url: https://files.pythonhosted.org/packages/a9/65/7318bfa6eee16a9ccd53ba551e5c81d112ddb19930d7e42f90053aad0143/dbt_semantic_interfaces-0.8.3-py3-none-any.whl
-  sha256: ce178f3ce0f6ae94eb65e110d48f0418eb60aab3807ee59b591e859533495025
+  version: 0.7.4
+  url: https://files.pythonhosted.org/packages/a3/4d/9e0eec04821154c51c05dab77bc3eed95337c42f471d6ffe7b4a699e8cb1/dbt_semantic_interfaces-0.7.4-py3-none-any.whl
+  sha256: 63965478ef27056f20a8c9a0f59b1355ebbc15133c1a6f0d368d93996a31dd5d
   requires_dist:
   - click<9.0,>=7.0
   - importlib-metadata<7,>=6.0
@@ -595,11 +598,12 @@ packages:
   requires_python: '>=3.8'
 - kind: pypi
   name: metricflow
-  version: 0.207.0
-  url: git+https://github.com/jonmmease/metricflow.git@3c2b3f44043a2deadfcb145d0d0e47bc4db2e069
+  version: 0.207.2
+  url: https://files.pythonhosted.org/packages/d6/87/d3db77fa9051160e4ea26bdd1da26601ee71058ede5543408bceba317ba0/metricflow-0.207.2-py3-none-any.whl
+  sha256: fd4168698714faa95d5596c92367027d45e51566779bfec6ba585d316e132bff
   requires_dist:
-  - dbt-semantic-interfaces<0.9.0,>=0.8.3
-  - dbt-semantic-interfaces==0.8.3
+  - dbt-semantic-interfaces<0.8,>=0.7.4
+  - dbt-semantic-interfaces<0.8.0,>=0.7.2
   - graphviz<0.21,>=0.18.2
   - jinja2>=3.1.3
   - more-itertools<10.2.0,>=8.10.0

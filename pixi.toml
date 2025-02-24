@@ -13,10 +13,7 @@ build-jaffle-db = { cmd = "python scripts/build_jaffle_db.py" }
 python = "3.10.*"
 
 [pypi-dependencies]
-# Just after the 0.207.0 release, with fix for dependency on dbt-core
-dbt-metricflow = { git = "https://github.com/jonmmease/metricflow.git", rev = "3c2b3f44043a2deadfcb145d0d0e47bc4db2e069", subdirectory="dbt-metricflow" }
-metricflow = { git = "https://github.com/jonmmease/metricflow.git", rev = "3c2b3f44043a2deadfcb145d0d0e47bc4db2e069" }
-
+dbt-metricflow = "==0.8.1"
+metricflow = "==0.207.2"
 duckdb = ">=1.1.1, <2"
-dbt-core = { git = "https://github.com/dbt-labs/dbt-core", rev = "ff6745c79532d50139d553f3b088c5d783b4f2dd", subdirectory="core" }
 dbt-duckdb = "==1.9.0"
